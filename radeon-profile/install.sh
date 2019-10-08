@@ -18,12 +18,20 @@ echo -e "AVISO:::::Se voce esta utilizando o Fedora tenha certeza de ter instala
 ==>qt5-qtcharts-devel\n
 ==>git\n
 :::::::::::::::::::::::::::::::TESTADO APENAS NO FEDORA 31 KDE::::::::::::::::::::::::::::::::::"
-echo "DIGITE "f" PARA CONTINUAR OU "q" PARA SAIR"
-read var
-var=${var,,}
-[[ "$var" = "q" ]] && exit
-[[ "$var" = "f" ]] && echo "ok"
+while [[ "$var" != "f" ]]; do
+	echo "DIGITE "f" PARA CONTINUAR OU "q" PARA SAIR"
+	read var
+	var=${var,,}
+	case var in
+		"f")
+			break ;;
+		"q")
+			exit ;;
+		  *)
+			continue ;;
+	esac
 
+done
 #verificando dependencias
 for i in "git" "qmake-qt5" ; do
 	type $i &>/dev/null  && echo -e "$i encontrado..." #|| $( echo -e "$1 não encontrado" && exit )
