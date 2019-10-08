@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 #cores
-azul="\033[36;1m"
+azul="033[34;1m"
+verde="\033[36;1m"
 fim="\033[m"
 
 #variaveis pacotes radeon-profile radeon-profile-daemon
@@ -11,13 +12,13 @@ url=https://github.com/marazmista/$pacote
 #libXrandr libXrandr-devel qt5-qtcharts qt5-qtcharts-devel
 #git
 #MENU
-echo -e "AVISO:::::Se voce esta utilizando o Fedora tenha certeza de ter instalado os seguintes pacotes antes de continuar\n
+echo -e "$verde AVISO:::::Se voce esta utilizando o Fedora tenha certeza de ter instalado os seguintes pacotes antes de continuar\n
 ==> libXrandr\n
 ==>libXrandr-devel\n
 ==>qt5-qtcharts\n
 ==>qt5-qtcharts-devel\n
 ==>git\n
-:::::::::::::::::::::::::::::::TESTADO APENAS NO FEDORA 31 KDE::::::::::::::::::::::::::::::::::"
+:::::::::::::::::::::::::::::::TESTADO APENAS NO FEDORA 31 KDE::::::::::::::::::::::::::::::::::$fim"
 while [[ "$var" != "f" ]]; do
 	echo "DIGITE "f" PARA CONTINUAR OU "q" PARA SAIR"
 	read var
