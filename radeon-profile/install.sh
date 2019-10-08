@@ -20,6 +20,7 @@ echo -e "AVISO:::::Se voce esta utilizando o Fedora tenha certeza de ter instala
 :::::::::::::::::::::::::::::::TESTADO APENAS NO FEDORA 31 KDE::::::::::::::::::::::::::::::::::"
 echo "DIGITE "f" PARA CONTINUAR OU "q" PARA SAIR"
 read var
+var=${var,,}
 [[ "$var" = "q" ]] && exit
 [[ "$var" = "f" ]] && echo "ok"
 
@@ -27,9 +28,10 @@ read var
 for i in "git" "qmake-qt5" ; do
 	type $i &>/dev/null  && echo -e "$i encontrado..." #|| $( echo -e "$1 não encontrado" && exit )
 done       
-
+echo -e "Em qual diretorio deseja baixar o "
 #função que realiza o download, compilação
 preparando(){
+cd $diretorio
 echo -e "Baixando o Codigo Fonte do $pacote..."
 git clone $url/$pacote
 
